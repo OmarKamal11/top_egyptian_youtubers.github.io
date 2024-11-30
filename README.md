@@ -1,6 +1,6 @@
-# Identifying Top Performing Egyptian YouTubers for Marketing Collaborations in 2024
+# Identifying Top Performing Egyptian YouTubers for a Marketing Collaboration in 2024
 
-The primary goal of this project is to identify the top-performing Egyptian YouTubers to establish marketing collaborations throughout the year 2024. The aim is to determine which channels offer the highest potential for maximizing product sales, revenue, and net profit through effective marketing campaigns.
+The primary goal of this project is to identify the top-performing Egyptian YouTubers and provide actionable insights for a company looking to establish a successful marketing campaign throughout the year 2024. The aim is to determine which channels offer the highest potential for maximizing the <b Net Profit b> through effective marketing campaigns.
 
 This project was conducted in several comprehensive steps, leveraging a variety of tools and techniques to ensure accurate and insightful results.
 Below is an outline of the project's methodology and outcomes:
@@ -8,16 +8,18 @@ Below is an outline of the project's methodology and outcomes:
 ### Data Collection:
 
 Data was gathered using the YouTube API, providing detailed information on channel names, total views, total subscribers, total videos, and average views per video.
-Data Processing with SQL:
+
+### Data Processing with SQL:
 
 The collected data was imported and processed using SQL to create a refined dataset. This involved filtering and structuring the data to focus on the key metrics relevant to our analysis.
-Visualization with Power BI:
+
+### Visualization with Power BI:
 
 The refined dataset was then visualized using Power BI. This step included creating informative dashboards that highlight critical channel insights and performance metrics, allowing for easy interpretation of the data.
-Detailed Analysis in Excel:
 
-For the top three channels identified, further analysis was conducted in Excel to generate more specific metrics. This included calculating potential product sales per video, potential revenue per video, and net profit.
-These calculations were based on additional data provided by the marketing company, including the conversion rate, marketing campaign cost, and product cost.
+### Detailed Analysis in Excel:
+
+For the top three channels identified, further analysis was conducted in Excel to generate more specific metrics. This included calculating potential product sales per video, potential revenue per video, and net profit. These calculations were based on additional data provided by the marketing company, including the conversion rate, marketing campaign cost, and product cost.
 Combining SQL and Excel for Enhanced Insights:
 
 SQL was used in conjunction with Excel to ensure precise calculations and data handling. This combination allowed for robust analysis and the generation of actionable insights.
