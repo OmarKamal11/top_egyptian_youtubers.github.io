@@ -5,7 +5,7 @@ The primary goal of this project is to identify the top-performing Egyptian YouT
 This project was conducted in several comprehensive steps, leveraging a variety of tools and techniques to ensure accurate and insightful results.
 Below is an outline of the project's methodology and outcomes:
 
-## Data Collection:
+### Data Collection:
 
 Data was gathered using the YouTube API, providing detailed information on channel names, total views, total subscribers, total videos, and average views per video.
 Data Processing with SQL:
