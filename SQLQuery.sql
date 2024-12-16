@@ -11,6 +11,7 @@ WHERE NAME IS NULL;
 ALTER TABLE top_egypt_youtubers
 ALTER COLUMN NAME NVARCHAR(100) NOT NULL;
 
+
 --------------------------------------------------------------------------------
 
 select CHARINDEX('@',NAME) as position,NAME from top_egypt_youtubers
@@ -41,6 +42,42 @@ select channel_name,count(*) as duplicate_rows
 from view_egypt_youtubers
 group by channel_name
 having count(*) > 1
+
+---------------------------- Top 10 youtubers by subscribers -------------------
+
+with top_subscribers as (
+			 select *,
+			        (ROW_NUMBER() OVER(ORDER BY total_subscribers desc)) as rn 
+			 from view_egypt_youtubers)
+
+select channel_name,total_subscribers
+from top_subscribers
+where rn<=10
+
+---------------------------- Top 10 youtubers by views -------------------
+
+with top_views as (
+		   select *,
+			  (ROW_NUMBER() OVER(ORDER BY total_views desc)) as rn 
+		   from view_egypt_youtubers)
+
+select channel_name,total_views
+from top_views
+where rn<=10
+
+-------------------------------------- Important KPIs ------------------------------------
+
+with channel_insights as (
+			  select *,
+				 ROUND((average_views_per_video/1000000),2) as average_views_per_video_M,
+				 (CAST(ROUND((CAST(total_subscribers as decimal)/total_videos),2) as decimal(10,2))) as subscribers_to_video_ratio,
+				 (CAST(ROUND((CAST(total_views as decimal)/total_subscribers),2) as decimal(10,2))) as views_per_subscriber_ratio
+			   from view_egypt_youtubers)
+
+select channel_name,average_views_per_video_M,subscribers_to_video_ratio,views_per_subscriber_ratio
+from channel_insights
+
+
 
 -------------------         YOUTUBE ANALYTICS        --------------------------------------
 -------------------------------------------------------------------------------------------
@@ -82,5 +119,3 @@ select channel_name,average_views,
 from profit_margin
 order by total_subscribers desc
 OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
-
-
